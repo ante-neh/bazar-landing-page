@@ -1,30 +1,28 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Footer from './Footer';
 
 const Hero = ({ onOpenModal }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Array of background images
   const images = [
     '/images/hero-section-image-2.png',
     '/images/hero-section-image-3.png',
     '/images/hero-section-image.svg',
   ];
 
-  // Change the background image every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // 5000ms = 5 seconds
+    }, 5000);
 
-    return () => clearInterval(interval); // Cleanup interval on unmount
+    return () => clearInterval(interval); 
   }, [images.length]);
 
   return (
     <div className="relative h-screen w-full text-white">
-      {/* Dynamic background image */}
       {images.map((image, index) => (
         <div
           key={index}
@@ -42,13 +40,12 @@ const Hero = ({ onOpenModal }) => {
         </div>
       ))}
 
-      {/* Overlay Content */}
       <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center z-10">
         <div className="flex flex-col items-center justify-center space-y-8">
-          <div className="flex gap-12 items-center">
-            <Image src="/images/Logo.svg" width={100} height={100} alt="Logo" />
+          <div className="gap-2 flex sm:gap-12 items-center">
+            <Image src="/images/Logo.svg" width={80} height={100} alt="Logo" />
             <h1 className="text-6xl font-bold text-white">Bazar</h1>
-            <Image src="/images/RightImage.svg" width={100} height={100} alt="Right Image" />
+            <Image src="/images/a2sv.jpeg" width={200} height={600} alt="/images/a2sv.jpeg" />
           </div>
           <p className="text-gray-300 text-lg">
             Find Your Perfect Car or House with Bazar.
@@ -59,22 +56,23 @@ const Hero = ({ onOpenModal }) => {
               onClick={() => onOpenModal('intro')}
               className="px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition rounded-xl"
             >
-              INTRO
+              About A2SV
             </button>
             <button
               onClick={() => onOpenModal('about')}
               className="px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition rounded-xl"
             >
-              ABOUT
+              About Bazar
             </button>
             <button
               onClick={() => onOpenModal('contact')}
               className="px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition rounded-xl"
             >
-              CONTACT
+              Contact Us
             </button>
           </div>
         </div>
+      <Footer/>
       </div>
     </div>
   );

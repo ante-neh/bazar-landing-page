@@ -9,19 +9,14 @@ const Modal = ({ isOpen, content, onClose }) => {
                 </button>
                 {content === 'intro' && (
                     <div>
-                        <h2 className="text-4xl font-bold mb-4">INTRO</h2>
+                        <h2 className="text-4xl font-bold mb-4">About A2SV</h2>
                         <p>Aenean ornare velit lacus...</p>
                     </div>
                 )}
-                {content === 'work' && (
-                    <div>
-                        <h2 className="text-4xl font-bold mb-4">WORK</h2>
-                        <p>Adipiscing magna sed dolor elit...</p>
-                    </div>
-                )}
+               
                 {content === 'about' && (
                     <div>
-                        <h2 className="text-4xl font-bold mb-4">ABOUT</h2>
+                        <h2 className="text-4xl font-bold mb-4">About Bazar</h2>
                         <p>Lorem ipsum dolor sit amet...</p>
                     </div>
                 )}

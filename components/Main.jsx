@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Hero from '../components/Hero';
 import Modal from '../components/Modal';
 
+
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState('');
