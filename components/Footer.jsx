@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Footer = () => {
   return (
     <div className='w-full mt-96 -mb-44 flex gap-2 justify-center'>
-      <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.facebook.com/aa2sv/" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faFacebookF} size="1x" />
       </a>
       <a href="https://www.instagram.com/a2sv_org/" target="_blank" rel="noopener noreferrer">
